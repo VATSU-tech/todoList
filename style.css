@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Nunito,Arial, Helvetica, sans-serif;
+    
+}
+:root{
+    --couleur: #0051ff;
+    --text:#0051ff;
+    --background : #eee;
+    --border : .5px;
+}
+[data-theme = dark]{
+    --background : #222;
+}
+body{
+    padding: 5rem 0 0 0;
+    margin: 1rem auto;
+    max-width: 80%;
+    background-color: var(--background);
+    color: var(--text);
+    height: 100vh;
+    transition: .5s;
+}#theme {
+    background-color: var(--couleur);
+    border-radius: 15px;
+    border: var(--border) double var(--couleur);
+    padding: 1px 0 1px 5px;
+    width: 61px;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    transition: .5s;
+    opacity: .3;
+}
+#theme:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+.themeActive {
+    background-color: var(--background);
+    border-radius: 50%;
+    padding: 1px;
+}
+.todoList{
+
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr; 
+    grid-template-areas: 
+    "h h"
+    "a f";
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    width: 100%;
+}
+.header{  
+    text-align: center;
+    width: 100%;
+    margin-top: 5rem;
+    height: 6rem; 
+    grid-area: h;
+}
+#tacheAfaire{ 
+    text-align: center;
+    width: 100%; 
+    grid-area: a;
+    gap: 5rem;
+}
+#tachesFaites{ 
+    text-align: center;
+    width: 100%; 
+    grid-area: f;
+}
+.tache{
+    margin: 1rem 0;
+    
+}
+label{
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .03rem;
+}
+input[type = checkbox]{
+    display: none;
+}
+input[type = text]{
+    border-radius: 15px;
+    border: .05rem solid blue;
+    color: var(--text);
+    padding: .1rem .5rem;
+    text-transform: uppercase;
+    letter-spacing: .03rem;
+    font-weight: 600;
+    background-color: var(--background);
+}
+button{
+    color: var(--couleur);
+    border: .05rem solid var(--couleur);
+    padding: .1rem .5rem;
+    border-radius: 15px;
+    transition: all .5s ease-in-out;
+    background-color: var(--background);
+}
+button:hover{
+    color: var(--background);
+    background-color: var(--couleur);
+    border: .05rem solid var(--background);
+    cursor: pointer;
+}
+input[type = checkbox]:checked + label{
+    color: red;
+    transform: scale(2);
+}
+.btnSupprimer{
+    animation: sup 2s ease-in-out infinite forwards;
+    transition: all .5s ease-in-out;
+    opacity: .2;
+}
+.btnSupprimer:hover{
+        text-shadow: 0 0 10px red;
+        cursor: pointer;
+        transform: scale(1.2rem); 
+        animation: none;
+        opacity: 1;
+}
+@keyframes sup {
+    100%, 0%{
+        text-shadow: 0 0 0px red;
+    }
+    50%{
+        text-shadow: 0 0 5px var(--background);
+    }
+}
+.span{
+    opacity: .5;
+}
